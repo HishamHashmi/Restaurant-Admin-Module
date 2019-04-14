@@ -4,9 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-            <!-- HEADER DESKTOP-->
-              <!-- HEADER DESKTOP-->
-             <!-- MAIN CONTENT-->
+            <!-- MAIN CONTENT-->
              <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">

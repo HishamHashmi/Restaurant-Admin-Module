@@ -27,7 +27,7 @@
                         <asp:TextBox ID="RptPassword" runat="server" CssClass="input"></asp:TextBox>
                     </div>
                     <div class="group">
-                        <label for="Email" class="label">Repeat Password</label>
+                        <label for="Email" class="label">Email</label>
                         <asp:TextBox ID="UserEmail" runat="server" CssClass="input"></asp:TextBox>
                     </div>
                     <div class="group">

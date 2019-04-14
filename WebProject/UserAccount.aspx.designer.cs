@@ -7,81 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project_Stuff {
+namespace WebProject {
     
     
-    public partial class DineInOrder {
+    public partial class UserAccount {
         
         /// <summary>
-        /// calenderLabel control.
+        /// UsernameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label calenderLabel;
+        protected global::System.Web.UI.WebControls.Label UsernameLabel;
         
         /// <summary>
-        /// calenderButton control.
+        /// UserProfileName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton calenderButton;
+        protected global::System.Web.UI.WebControls.TextBox UserProfileName;
         
         /// <summary>
-        /// ReservationCalender control.
+        /// ProfileImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar ReservationCalender;
+        protected global::System.Web.UI.WebControls.Image ProfileImage;
         
         /// <summary>
-        /// rptCategory control.
+        /// ImageUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCategory;
+        protected global::System.Web.UI.WebControls.FileUpload ImageUpdate;
         
         /// <summary>
-        /// CalLabel control.
+        /// AdminProfileEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CalLabel;
+        protected global::System.Web.UI.WebControls.TextBox AdminProfileEmail;
         
         /// <summary>
-        /// CalImage control.
+        /// ButtonSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton CalImage;
-        
-        /// <summary>
-        /// CalDineIN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalDineIN;
-        
-        /// <summary>
-        /// RepeaterDineIN control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterDineIN;
+        protected global::System.Web.UI.WebControls.Button ButtonSave;
     }
 }

@@ -55,6 +55,22 @@
                                                     </div>
                                                      <div class="row form-group">
                                                             <div class="col-md-3">
+                                                                <label for="file-input" class=" form-control-label">Restaurant Profile Image:</label>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <asp:Image ID="Image" ImageUrl='<%# Eval("restaurantDP") %>' Width ="250px" runat="server"/>
+                                                            </div>
+                                                        </div>
+                                                     <div class="row form-group">
+                                                              <div class="col-md-3">
+                                                                <label for="file-input" class=" form-control-label">Upload New Image:</label>
+                                                            </div>
+                                                             <div class="col-md-6">
+                                                            <asp:FileUpload ID="UploadImage" runat="server" class=" form-control"/>
+                                                            </div>
+                                                         </div>
+                                                     <div class="row form-group">
+                                                            <div class="col-md-3">
                                                                 <label for="hf-openingtime" class=" form-control-label">Opening Time:</label>
                                                             </div>
                                                             <div class="col-md-6">
@@ -94,6 +110,7 @@
                                             <div class="card-footer">
                                                 <asp:Button ID="Submit" runat="server" Text="Submit" class="btn btn-primary btn-md" OnClick="ButtonSubmit_Click"/>
                                                 <asp:Button ID="Reset" runat="server" Text="Reset" class="btn btn-danger btn-md" OnClick="ButtonReset_Click"/>
+                                                <asp:Button ID="Update" runat="server" Text="Update" class="btn btn-success btn-md" OnClick="ButtonUpdate_Click"/>
                                             </div>
                                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT * FROM [restaurantProfile]"></asp:SqlDataSource>
                              </div>

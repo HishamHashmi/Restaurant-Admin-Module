@@ -18,6 +18,7 @@ namespace Project_Stuff
             if (!IsPostBack)
             {
                 ReservationCalender.Visible = false;
+                CalDineIN.Visible = false;
                 BindData();
                 BindDineINData();
             }
@@ -138,6 +139,7 @@ namespace Project_Stuff
         protected void ReservationCalender_SelectionChanged(object sender, EventArgs e)
         {
             DateTime dtSeleted = ReservationCalender.SelectedDate;
+            calenderLabel.Text = dtSeleted.ToShortDateString();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "Select * from tableReservation Where [Date] = '" + dtSeleted.ToShortDateString() + "'";
@@ -151,6 +153,64 @@ namespace Project_Stuff
             rptCategory.DataSource = ds;
             rptCategory.DataBind();
             ReservationCalender.Visible = false;
+        }
+
+        protected void DineINCalender_DayRender(object sender, DayRenderEventArgs e)
+        {
+            SqlCommand objCmd = new SqlCommand();
+            objCmd.Connection = con;
+            objCmd.CommandText = "select * from DineINOrder INNER JOIN orderDetails ON DineINOrder.orderID = orderDetails.orderID  ORDER BY DineINOrder.orderID";
+            objCmd.CommandType = CommandType.Text;
+            DataSet objDS = new DataSet();
+            SqlDataAdapter objDA = new SqlDataAdapter();
+            objDA.SelectCommand = objCmd;
+            objDA.Fill(objDS);
+            DataTable dt = objDS.Tables["DineINOrder"];
+            DataRowCollection drc = dt.Rows;
+            if (drc.Count > 0)
+            {
+                Literal literal1 = new Literal();
+                literal1.Text = "<br/>";
+                e.Cell.Controls.Add(literal1);
+                foreach (DataRow dr in drc)
+                {
+                    DateTime dtDob = Convert.ToDateTime(dr["Date"]);
+                    if (e.Day.Date.Day == dtDob.Day && e.Day.Date.Month == dtDob.Month)
+                    {
+                        e.Cell.BackColor = System.Drawing.Color.Yellow;
+                        e.Cell.ForeColor = System.Drawing.Color.Red;
+                        e.Cell.ToolTip = "Dine-IN Order";
+                        Image img1 = new Image();
+                        img1.ImageUrl = "~/images/icon/tick.png";
+                        img1.ToolTip = dr["customerName"].ToString();
+                        e.Cell.Controls.Add(img1);
+                    }
+                }
+            }
+        }
+
+        protected void CalImage_Click(object sender, ImageClickEventArgs e)
+        {
+            CalDineIN.Visible = true;
+        }
+
+        protected void DineINCalender_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime dtSeleted = CalDineIN.SelectedDate;
+            CalLabel.Text = dtSeleted.ToShortDateString();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "Select * from DineINOrder Where [Date] = '" + dtSeleted.ToShortDateString() + "'";
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            da.SelectCommand.CommandType = CommandType.Text;
+            DataSet ds = new DataSet();
+            con.Open();
+            da.Fill(ds);
+            con.Close();
+            RepeaterDineIN.DataSource = ds;
+            RepeaterDineIN.DataBind();
+            CalDineIN.Visible = false;
         }
     }
 }

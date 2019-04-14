@@ -199,6 +199,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="UpdateProducts.aspx" />
+    <Content Include="UserAccount.aspx" />
     <Content Include="vendor\animsition\animsition.min.css" />
     <Content Include="vendor\animsition\animsition.min.js" />
     <Content Include="vendor\bootstrap-4.1\bootstrap.min.css" />
@@ -401,6 +402,13 @@
     </Compile>
     <Compile Include="UpdateProducts.aspx.designer.cs">
       <DependentUpon>UpdateProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount.aspx.cs">
+      <DependentUpon>UserAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount.aspx.designer.cs">
+      <DependentUpon>UserAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewMenu.aspx.cs">
       <DependentUpon>ViewMenu.aspx</DependentUpon>

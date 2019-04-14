@@ -25,7 +25,7 @@ namespace Project_Stuff
         {
            SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "Select restaurantAdminID, restaurantAdminUsername, restaurantAdminPassword from restaurantAdminAccount where restaurantAdminUsername ='" + username.Text + "' and restaurantAdminPassword ='" + password.Text+"'";
+            cmd.CommandText = "Select restaurantAdminID, restaurantAdminUsername, restaurantAdminEmail from restaurantAdminAccount where restaurantAdminUsername ='" + username.Text + "' and restaurantAdminPassword ='" + password.Text+"'";
             cmd.CommandType = CommandType.Text;
             con.Open();
             cmd.ExecuteNonQuery();
@@ -34,8 +34,8 @@ namespace Project_Stuff
             sda.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                Session["restaurantAdminUsername"] = dr["restaurantAdminUsername"].ToString();
-                Session["restaurantAdminPassword"] = dr["restaurantAdminPassword"].ToString();
+                Session["restaurantAdminID"] = dr["restaurantAdminID"].ToString();
+                Session["restaurantAdminEmail"] = dr["restaurantAdminEmail"].ToString();
                 Response.Redirect("~/Home.aspx");
             }
             con.Close();

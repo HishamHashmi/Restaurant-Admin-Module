@@ -15,7 +15,7 @@
                                         <div class="card">
                                                 <div class="card-header">       
                                                      <h2 class="title-1">Table Reservations: <span style="float:right;">
-                                                         <asp:Label runat="server" class="form-control" Text=""  Width="250px" Height="40px"></asp:Label>
+                                                         <asp:Label ID="calenderLabel" runat="server" class="form-control" Text=""  Width="250px" Height="40px"></asp:Label>
                                                          <asp:ImageButton ID="calenderButton" runat="server" ImageUrl="~/images/icon/calender.png" Width="40px" Height="40px" OnClick="calenderButton_Click"/>
                                                          <asp:Calendar ID="ReservationCalender" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="200px" NextPrevFormat="FullMonth" OnSelectionChanged="ReservationCalender_SelectionChanged" TitleFormat="Month" Width="300px">
                                                              <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
@@ -66,7 +66,20 @@
                                  <div class="col-md-12">
                                         <div class="card">
                                                 <div class="card-header">       
-                                                     <h2 class="title-1">Dine-IN Orders:</h2> 
+                                                     <h2 class="title-1">Dine-IN Orders: <span style="float:right;">
+                                                          <asp:Label ID="CalLabel" runat="server" class="form-control" Text=""  Width="250px" Height="40px"></asp:Label>
+                                                         <asp:ImageButton ID="CalImage" runat="server" ImageUrl="~/images/icon/calender.png" Width="40px" Height="40px" OnClick="CalImage_Click"/>
+                                                         <asp:Calendar ID="CalDineIN" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest" Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="200px" NextPrevFormat="FullMonth" OnSelectionChanged="DineINCalender_SelectionChanged" TitleFormat="Month" Width="300px">
+                                                             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" ForeColor="#333333" Height="10pt" />
+                                                             <DayStyle Width="14%" />
+                                                             <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+                                                             <OtherMonthDayStyle ForeColor="#999999" />
+                                                             <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+                                                             <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Width="1%" />
+                                                             <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" ForeColor="White" Height="14pt" />
+                                                             <TodayDayStyle BackColor="#CCCC99" />
+                                                         </asp:Calendar></span>
+                                                     </h2> 
                                                 </div>
                                             <div class="table-responsive table--no-card m-b-30">
                                             <asp:Repeater ID="RepeaterDineIN" runat="server">
