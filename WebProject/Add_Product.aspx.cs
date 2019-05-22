@@ -25,7 +25,7 @@ namespace WebProject
             {
                 SqlCommand objCmd = new SqlCommand();
                 objCmd.Connection = con;
-                objCmd.CommandText = "SELECT * FROM menuItems ORDER BY itemCategory";
+                objCmd.CommandText = "SELECT * FROM menuItems where restaurantID='"+Session["restaurantID"]+ "'ORDER BY itemCategory ";
                 objCmd.CommandType = CommandType.Text;
                 DataSet objDS = new DataSet();
                 SqlDataAdapter objDA = new SqlDataAdapter();
@@ -40,7 +40,7 @@ namespace WebProject
             {
                 string imagePath = "~/images/" + newImage.FileName;
                 newImage.SaveAs(Server.MapPath(imagePath).ToString());
-                SqlCommand cmd = new SqlCommand("Insert into menuItems(itemName,itemCategory,itemPrice,itemImage,itemDescription) values ('" + TextBoxName.Text + "','" + CategoryList.Text + "','" + TextBoxPrice.Text + "','" + imagePath + "','" + TextBoxBio.Text + "')", con);
+                SqlCommand cmd = new SqlCommand("Insert into menuItems(itemName,itemCategory,itemPrice,itemImage,itemDescription,restaurantID) values ('" + TextBoxName.Text + "','" + CategoryList.Text + "','" + TextBoxPrice.Text + "','" + imagePath + "','" + TextBoxBio.Text + "','"+Session["restaurantID"]+"')", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -53,7 +53,7 @@ namespace WebProject
 
                 using (SqlConnection con = new SqlConnection(constr))
                 {
-                    using (SqlCommand cmd = new SqlCommand("DELETE FROM menuItems WHERE itemName = @itemName", con))
+                    using (SqlCommand cmd = new SqlCommand("DELETE FROM menuItems WHERE itemName = @itemName AND restaurantID="+Session["restaurantID"], con))
                     {
                         cmd.Parameters.AddWithValue("@itemName", itemName);
                         con.Open();

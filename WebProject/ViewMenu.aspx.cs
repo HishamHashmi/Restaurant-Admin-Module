@@ -19,7 +19,7 @@ namespace Project_Stuff
             {
                 SqlCommand objCmd = new SqlCommand();
                 objCmd.Connection = con;
-                objCmd.CommandText = "SELECT * from menuItems ORDER BY itemCategory";
+                objCmd.CommandText = "SELECT * from menuItems where restaurantID='"+Session["restaurantID"]+"' ORDER BY itemCategory ";
                 objCmd.CommandType = CommandType.Text;
 
                 DataSet objDS = new DataSet();

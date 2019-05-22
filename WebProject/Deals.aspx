@@ -21,7 +21,7 @@
                                                                 <label for="file-input" class=" form-control-label">Deal Name:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxDealName" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxDealName" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="dealname" runat="server" ErrorMessage="Alert! Product Name is required" ForeColor="Red" ControlToValidate="TextBoxDealName"></asp:RequiredFieldValidator>
                                                             </div>
                                                         </div>
@@ -39,7 +39,7 @@
                                                                 <label for="file-input" class=" form-control-label">Deal Description:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxDealDescription" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxDealDescription" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="Bio" runat="server" ErrorMessage="Alert! Deal Description is required" ForeColor="Red" ControlToValidate="TextBoxDealDescription"></asp:RequiredFieldValidator>
                                                             </div>
                                                         </div>

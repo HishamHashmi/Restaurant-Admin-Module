@@ -27,7 +27,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "select * from tableReservation";
+            objCmd.CommandText = "select * from tableReservation where restaurantID="+Session["restaurantID"];
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter objDA = new SqlDataAdapter();
@@ -42,7 +42,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "select * from DineINOrder INNER JOIN orderDetails ON DineINOrder.orderID = orderDetails.orderID  ORDER BY DineINOrder.orderID";
+            objCmd.CommandText = "select * from DineINOrder INNER JOIN orderDetails ON DineINOrder.orderID = orderDetails.orderID WHERE DineINOrder.restaurantID='"+Session["restaurantID"]+"' ORDER BY DineINOrder.orderID";
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter objDA = new SqlDataAdapter();

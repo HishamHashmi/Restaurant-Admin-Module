@@ -16,11 +16,11 @@
             <div class="login-form">
                     <div class="group">
                         <label for="user" class="label">Username</label>
-                        <asp:TextBox ID="username" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="username" runat="server" CssClass="input" AutoComplete="Disabled"></asp:TextBox>
                          </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <asp:TextBox ID="password" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" CssClass="input" AutoComplete="Disabled"></asp:TextBox>
                     </div>
                     <div class="group">
                          <asp:Label ID="LoginResults" runat="server" Text="" CssClass="form-control" ForeColor="Black"></asp:Label>

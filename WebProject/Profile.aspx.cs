@@ -17,6 +17,20 @@ namespace Project_Stuff
         {
             if (!IsPostBack)
             {
+                SqlCommand Objcmd = new SqlCommand();
+                Objcmd.Connection = con;
+                Objcmd.CommandText = "SELECT * from restaurantProfile where restaurantAdminAccountID=" + Session["restaurantAdminID"];
+                Objcmd.CommandType = CommandType.Text;
+                con.Open();
+                Objcmd.ExecuteNonQuery();
+                DataTable objDT = new DataTable();
+                SqlDataAdapter objDA = new SqlDataAdapter(Objcmd);
+                objDA.Fill(objDT);
+                foreach (DataRow objDr in objDT.Rows)
+                {
+                    Session["restaurantID"] = objDr["restaurantID"].ToString();
+                }
+                con.Close();
                 BindData();
             }
         }
@@ -64,6 +78,7 @@ namespace Project_Stuff
             TextBoxClosingTime.Text = "";
             TextBoxCapacity.Text = "";
             TextBoxBio.Text = "";
+            Response.Redirect("~/Profile.aspx");
         }
 
         protected void ButtonUpdate_Click(object sender, EventArgs e)

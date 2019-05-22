@@ -24,7 +24,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "SELECT * FROM homeDelivery";
+            objCmd.CommandText = "SELECT * FROM homeDelivery where restaurantID="+Session["restaurantID"];
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter objDA = new SqlDataAdapter();

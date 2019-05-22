@@ -7,26 +7,24 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.IO;
-namespace Project_Stuff
+namespace WebProject
 {
-    public partial class Menu_Categories : System.Web.UI.Page
+    public partial class Feedback : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["PSConnectionStrings"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                    BindData();
+                BindData();
             }
         }
         private void BindData()
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "SELECT * FROM menuCategories WHERE restaurantID =" +Session["restaurantID"];
+            objCmd.CommandText = "SELECT restCustomerFName,restCustomerLName, restCustomerEmail,restsubject,restFeedback FROM restaurantFeedback";
             objCmd.CommandType = CommandType.Text;
-
             DataSet objDS = new DataSet();
             SqlDataAdapter objDA = new SqlDataAdapter();
             objDA.SelectCommand = objCmd;
@@ -36,38 +34,22 @@ namespace Project_Stuff
             rptCategory.DataSource = objDS;
             rptCategory.DataBind();
         }
-        protected void ButtonInsert_Click(object sender, EventArgs e)
-        {
-            if (UploadImage.HasFile)
-            {
-                string imagePath = "~/images/" + UploadImage.FileName;
-                UploadImage.SaveAs(Server.MapPath(imagePath).ToString());
-                SqlCommand cmd = new SqlCommand("insert into menuCategories(categoryName,categoryImage,restaurantID) values('" + TextBoxCategoryName.Text + "','" + imagePath +"', '"+Session["restaurantID"]+"') ",con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                TextBoxCategoryName.Text = "";
-                imagePath = "";
-            }
-            else{ }
-            Response.Redirect("Menu_Categories.aspx");
-        }
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
-            string categoryName = ((sender as Button).NamingContainer.FindControl("CategoryName") as Label).Text;
+            string customerEmail = (((sender as Button).NamingContainer.FindControl("customerEmail") as Label).Text);
             string constr = ConfigurationManager.ConnectionStrings["PSConnectionStrings"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM menuCategories WHERE categoryName = @categoryName", con))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM restaurantFeedback WHERE restCustomerEmail = @customerEmail", con))
                 {
-                    cmd.Parameters.AddWithValue("@categoryName", categoryName);
+                    cmd.Parameters.AddWithValue("@customerEmail", customerEmail);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
             }
-            Response.Redirect("Menu_Categories.aspx");
+            Response.Redirect("Feedback.aspx");
         }
     }
 }

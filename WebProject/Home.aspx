@@ -121,7 +121,11 @@
                                                     </asp:ChartArea>
                                                 </ChartAreas>
                                             </asp:Chart>
-                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT * FROM [tableReservation]"></asp:SqlDataSource>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT bookingID, customerName, arrivalTime, checkoutTime, date, NoOfPersons, tableNo, discountID, customerID, restaurantID FROM tableReservation WHERE (restaurantID = @restaurantID)">
+                                                <SelectParameters>
+                                                    <asp:SessionParameter Name="restaurantID" SessionField="restaurantID" />
+                                                </SelectParameters>
+                                            </asp:SqlDataSource>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +155,11 @@
                                                             </asp:ChartArea>
                                                         </ChartAreas>
                                                     </asp:Chart>
-                                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT * FROM [menuItems]"></asp:SqlDataSource>
+                                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT itemID, itemName, itemCategory, itemPrice, itemImage, itemDescription, restaurantID FROM menuItems WHERE (restaurantID = @restaurantID)">
+                                                        <SelectParameters>
+                                                            <asp:SessionParameter Name="restaurantID" SessionField="restaurantID" />
+                                                        </SelectParameters>
+                                                    </asp:SqlDataSource>
                                                 </div>
                                             </div>
                                         </div>

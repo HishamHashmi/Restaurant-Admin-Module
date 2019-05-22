@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
      <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
@@ -49,7 +50,7 @@
                                                         <td class="text-center" style="width:100px; font-size:13px;"><asp:Label ID="customerName" runat="server" Text='<%# Eval("customerName") %>'/></td>
                                                         <td class="text=center" style="width:100px; font-size:13px;"><asp:Label ID="arrivalTime" runat="server" Text='<%# Eval("arrivalTime") %>'/></td>
                                                         <td class="text-center" style="width:100px; font-size:13px;"><asp:Label ID="checkoutTime" runat="server" Text='<%#Eval("checkoutTime") %>'/></td>
-                                                        <td class="text-center" style="width:100px; font-size:13px;"><asp:Label ID="Date" runat="server" Text='<%# Convert.ToDateTime(Eval("date")).ToShortDateString() %>'/></td>
+                                                        <td class="text-center" style="width:100px; font-size:13px;"><asp:Label ID="Date" runat="server" Text='<%# Eval("date") %>'/></td>
                                                         <td class="text-center" style="width:100px; font-size:13px;"><asp:Label ID="NoOffPersons" runat="server" Text='<%#Eval("NoOFPersons") %>'/></td>
                                                         <td class="text-center" style="width:100px; font-size:13px;"><asp:Label ID="tableNo" runat="server" Text='<%#Eval("tableNo") %>'/></td>
                                                         <td class="text-center" style="width:100px; font-size:13px;"><asp:Button ID="DeleteButton" runat="server" class="btn btn-danger btn-sm" Text="Delete" OnClientClick="return confirm('Do you want to delete this Reservation?');" OnClick="DeleteButton_Click"/></td>
@@ -81,7 +82,7 @@
                                                          </asp:Calendar></span>
                                                      </h2> 
                                                 </div>
-                                            <div class="table-responsive table--no-card m-b-30">
+                                           <div class="table-responsive table--no-card m-b-30">
                                             <asp:Repeater ID="RepeaterDineIN" runat="server">
                                                <HeaderTemplate>
                                                     <table class="table table-borderless table-striped table-earning">

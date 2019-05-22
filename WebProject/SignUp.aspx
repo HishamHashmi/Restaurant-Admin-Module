@@ -16,19 +16,19 @@
             <div class="login-form">
                     <div class="group">
                         <label for="user" class="label">Username</label>
-                        <asp:TextBox ID="Username" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="Username" runat="server" CssClass="input" AutoComplete="Disabled"></asp:TextBox>
                          </div>
                     <div class="group">
                         <label for="pass" class="label">Password</label>
-                        <asp:TextBox ID="Password" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="Password" runat="server" CssClass="input" AutoComplete="Disabled"></asp:TextBox>
                     </div>
                     <div class="group">
                         <label for="Rptpass" class="label">Repeat Password</label>
-                        <asp:TextBox ID="RptPassword" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="RptPassword" runat="server" CssClass="input" AutoComplete="Disabled"></asp:TextBox>
                     </div>
                     <div class="group">
                         <label for="Email" class="label">Email</label>
-                        <asp:TextBox ID="UserEmail" runat="server" CssClass="input"></asp:TextBox>
+                        <asp:TextBox ID="UserEmail" runat="server" CssClass="input" AutoComplete="Disabled"></asp:TextBox>
                     </div>
                     <div class="group">
                          <asp:Label ID="LoginResults" runat="server" Text="" CssClass="form-control" ForeColor="Black"></asp:Label>

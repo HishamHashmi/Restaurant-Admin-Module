@@ -23,7 +23,7 @@ namespace Project_Stuff
        
         protected void Submit_Click(object sender, EventArgs e)
         {
-           SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "Select restaurantAdminID, restaurantAdminUsername, restaurantAdminEmail from restaurantAdminAccount where restaurantAdminUsername ='" + username.Text + "' and restaurantAdminPassword ='" + password.Text+"'";
             cmd.CommandType = CommandType.Text;
@@ -36,10 +36,13 @@ namespace Project_Stuff
             {
                 Session["restaurantAdminID"] = dr["restaurantAdminID"].ToString();
                 Session["restaurantAdminEmail"] = dr["restaurantAdminEmail"].ToString();
-                Response.Redirect("~/Home.aspx");
             }
             con.Close();
+
+       
+            Response.Redirect("~/Profile.aspx");
+
         }
-     
+
     }
 }

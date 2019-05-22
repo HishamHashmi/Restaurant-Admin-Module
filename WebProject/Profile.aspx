@@ -22,7 +22,7 @@
                                                             <label for="hf-name" class=" form-control-label">Restaurant Name:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <asp:TextBox ID="TextBoxName" runat="server" class=" form-control"></asp:TextBox>
+                                                            <asp:TextBox ID="TextBoxName" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="Name" runat="server" ErrorMessage="Alert! Name is required" ForeColor="Red" ControlToValidate="TextBoxName"></asp:RequiredFieldValidator>
                                                         </div>
                                                     </div>
@@ -31,7 +31,7 @@
                                                             <label for="hf-contact" class=" form-control-label">Contact No.:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <asp:TextBox ID="TextBoxContact" runat="server" class=" form-control"></asp:TextBox>
+                                                            <asp:TextBox ID="TextBoxContact" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="Contact" runat="server" ErrorMessage="Alert! Contact No. is required" ForeColor="Red" ControlToValidate="TextBoxContact"></asp:RequiredFieldValidator>
                                                          </div>
                                                     </div>
@@ -40,7 +40,7 @@
                                                                 <label for="hf-capacity" class=" form-control-label">Email:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxEmail" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxEmail" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                   <asp:RequiredFieldValidator ID="Email" runat="server" ErrorMessage="Alert! Email is required" ForeColor="Red" ControlToValidate="TextBoxEmail"></asp:RequiredFieldValidator>
                                                             </div>
                                                     </div>
@@ -49,7 +49,7 @@
                                                                 <label for="hf-address" class=" form-control-label">Address:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxAddress" runat="server" class=" form-control" Height="100px" TextMode="MultiLine"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxAddress" runat="server" class=" form-control" Height="100px" TextMode="MultiLine" AutoComplete="Disabled"></asp:TextBox>
                                                                   <asp:RequiredFieldValidator ID="Address" runat="server" ErrorMessage="Alert! Address is required" ForeColor="Red" ControlToValidate="TextBoxAddress"></asp:RequiredFieldValidator>
                                                              </div>
                                                     </div>
@@ -74,7 +74,7 @@
                                                                 <label for="hf-openingtime" class=" form-control-label">Opening Time:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxOpeningTime" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxOpeningTime" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                   <asp:RequiredFieldValidator ID="OpeningTime" runat="server" ErrorMessage="Alert! Opening Time is required" ForeColor="Red" ControlToValidate="TextBoxOpeningTime"></asp:RequiredFieldValidator>
                                                             </div>
                                                     </div>
@@ -83,7 +83,7 @@
                                                                 <label for="hf-closingtime" class=" form-control-label">Closing TIme:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxClosingTime" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxClosingTime" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                   <asp:RequiredFieldValidator ID="ClosingTime" runat="server" ErrorMessage="Alert! Closing Time is required" ForeColor="Red" ControlToValidate="TextBoxClosingTime"></asp:RequiredFieldValidator>
                                                             </div>
                                                     </div>
@@ -92,7 +92,7 @@
                                                                 <label for="hf-capacity" class=" form-control-label">Restaurant Capacity:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxCapacity" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxCapacity" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                   <asp:RequiredFieldValidator ID="Capacity" runat="server" ErrorMessage="Alert! Restaurant Capacity is required" ForeColor="Red" ControlToValidate="TextBoxCapacity"></asp:RequiredFieldValidator>
                                                             </div>
                                                     </div>
@@ -101,7 +101,7 @@
                                                                 <label for="hf-bio" class=" form-control-label">Bio:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxBio" runat="server" class=" form-control" Height="100px" TextMode="MultiLine"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxBio" runat="server" class=" form-control" Height="100px" TextMode="MultiLine" AutoComplete="Disabled"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="Bio" runat="server" ErrorMessage="Alert! Restaurant Bio is required" ForeColor="Red" ControlToValidate="TextBoxBio"></asp:RequiredFieldValidator>
                                                              </div>
                                                     </div>

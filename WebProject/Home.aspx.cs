@@ -16,12 +16,10 @@ namespace Project_Stuff
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (IsPostBack)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+          
             if (!IsPostBack)
             {
+            
                 BindDataTable();
                 BindData();
                 BindData1();
@@ -33,7 +31,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "select * from DineINOrder INNER JOIN orderDetails ON DineINOrder.orderID = orderDetails.orderID  ORDER BY DineINOrder.orderID";
+            objCmd.CommandText = "select * from DineINOrder INNER JOIN orderDetails ON DineINOrder.orderID = orderDetails.orderID WHERE DineINOrder.restaurantID='"+Session["restaurantID"]+"' ORDER BY DineINOrder.orderID";
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter objDA = new SqlDataAdapter();
@@ -62,7 +60,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "SELECT * FROM tableReservation";
+            objCmd.CommandText = "SELECT * FROM tableReservation where restaurantID=" + Session["restaurantID"];
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter();
@@ -76,7 +74,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "SELECT * FROM homeDelivery";
+            objCmd.CommandText = "SELECT * FROM homeDelivery WHERE restaurantID=" + Session["restaurantID"];
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter();
@@ -90,7 +88,7 @@ namespace Project_Stuff
         {
             SqlCommand objCmd = new SqlCommand();
             objCmd.Connection = con;
-            objCmd.CommandText = "SELECT * FROM DineINOrder";
+            objCmd.CommandText = "SELECT * FROM DineINOrder WHERE restaurantID=" +Session["restaurantID"];
             objCmd.CommandType = CommandType.Text;
             DataSet objDS = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter();

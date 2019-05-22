@@ -146,10 +146,12 @@
     <Content Include="bin\WebProject.pdb" />
     <Content Include="burger.jpgburger.jpg" />
     <Content Include="css\font-face.css" />
+    <Content Include="css\modalitem.css" />
     <Content Include="css\theme.css" />
     <Content Include="Customers.aspx" />
     <Content Include="Deals.aspx" />
     <Content Include="DineInOrder.aspx" />
+    <Content Include="Feedback.aspx" />
     <Content Include="fonts\poppins\poppins-v5-latin-100.svg" />
     <Content Include="fonts\poppins\poppins-v5-latin-100italic.svg" />
     <Content Include="fonts\poppins\poppins-v5-latin-200.svg" />
@@ -317,6 +319,13 @@
     </Compile>
     <Compile Include="DineInOrder.aspx.designer.cs">
       <DependentUpon>DineInOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

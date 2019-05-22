@@ -26,7 +26,7 @@
                                                                 <label for="file-input" class=" form-control-label">Product Name:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxName" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxName" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="Name" runat="server" ErrorMessage="Alert! Product Name is required" ForeColor="Red" ControlToValidate="TextBoxName"></asp:RequiredFieldValidator>
                                                             </div>
                                                         </div>
@@ -36,7 +36,11 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <asp:DropDownList ID="CategoryList"  runat="server" DataSourceID="SqlDataSource1"  DataTextField="categoryName" DataValueField="categoryName"  class=" form-control"></asp:DropDownList>
-                                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT [categoryName] FROM [menuCategories]"></asp:SqlDataSource>
+                                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PSConnectionStrings %>" SelectCommand="SELECT categoryName FROM menuCategories WHERE (restaurantID = @restaurantID)">
+                                                                        <SelectParameters>
+                                                                            <asp:SessionParameter Name="restaurantID" SessionField="restaurantID" />
+                                                                        </SelectParameters>
+                                                                    </asp:SqlDataSource>
                                                                      <asp:RequiredFieldValidator ID="dropdowncategorylist" runat="server" ErrorMessage="Alert! Category is required" ForeColor="Red" ControlToValidate="CategoryList"></asp:RequiredFieldValidator>
                                                                </div>
                                                         </div>
@@ -45,7 +49,7 @@
                                                                     <label for="file-input" class=" form-control-label">Price:</label>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <asp:TextBox ID="TextBoxPrice" runat="server" class=" form-control"></asp:TextBox>
+                                                                    <asp:TextBox ID="TextBoxPrice" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                     <asp:RequiredFieldValidator ID="Price" runat="server" ErrorMessage="Alert! Price is required" ForeColor="Red" ControlToValidate="TextBoxPrice"></asp:RequiredFieldValidator>
                                                                 </div>
                                                         </div>                     
@@ -63,7 +67,7 @@
                                                                 <label for="hf-description" class=" form-control-label">Description:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxBio" runat="server" class=" form-control" TextMode="MultiLine" Height="100px"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxBio" runat="server" class=" form-control" TextMode="MultiLine" Height="100px" AutoComplete="Disabled"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="Bio" runat="server" ErrorMessage="Alert! Product Description is required" ForeColor="Red" ControlToValidate="TextBoxBio"></asp:RequiredFieldValidator>
                                                            </div>
                                                          </div>                                          

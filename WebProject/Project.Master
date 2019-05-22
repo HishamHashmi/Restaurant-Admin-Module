@@ -16,6 +16,7 @@
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
+
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
@@ -178,6 +179,9 @@
                         <li class="has-sub">
                             <a href="Add_Table.aspx">
                             <i class="fa fa-area-chart"></i>Add Table</a>
+                        </li>
+                         <li class="has-sub">
+                              <a class="js-arrow" href="Feedback.aspx"><i class="fa fa-envelope"></i>Feedback</a>
                         </li>
                     </ul>
                 </nav>

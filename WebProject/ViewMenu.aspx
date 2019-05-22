@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <link href="css/modalitem.css" rel="stylesheet" media="all">
     <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
@@ -30,7 +31,7 @@
                                                         </tr>
                                                 </HeaderTemplate>
                                                 <ItemTemplate>
-                                                    <tr>
+                                                    <tr data-toggle="modal" data-target="#myModal">
                                                         <td class="text-center" style="width:300px"><asp:Label ID="itemName" runat="server" Text='<%# Eval("itemName") %>'/></td>
                                                         <td class="text=center" style="width:300px"><asp:Label ID="categoryNameLabel" runat="server" Text='<%# Eval("itemCategory") %>'/></td>
                                                         <td class="text-center" style="width:300px"><asp:Image ID="itemImage" runat="server" ImageUrl='<%#Eval("itemImage") %>'/></td>
@@ -43,6 +44,24 @@
                                                     </table>
                                                 </FooterTemplate>
                                             </asp:Repeater>
+                                                 <!--    <div class="modal fade" id="myModal" role="dialog">
+                                                         <div class="modal-dialog">
+                                                             <div class="modal-content">
+                                                                 <div class="modal-header">
+                                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                 </div>
+                                                                 <div class="modal-body">
+                                                                     <div class="form-group">
+                                                                         <label for="ItemName" style="font-size: 15px;">Item Name:</label><span ><asp:Label ID="itemName" runat="server" Text='<%# Eval("itemName") %>' Font-Size="Medium" Font-Bold="True" ForeColor="Black" /></span><br />
+                                                                         <label for="ItemCat" style="font-size: 15px;">Item Category:</label><span><asp:Label ID="categoryNameLabel" runat="server" Text='<%# Eval("itemCategory") %>'/></span><br />
+                                                                         <label for="ItemImg" style="font-size: 15px;">Item Image:</label><span><asp:Image ID="itemImage" runat="server" ImageUrl='<%#Eval("itemImage") %>'/></span><br />
+                                                                         <label for="ItemPrice" style="font-size: 15px;">Item Price:</label><span><asp:Image ID="itemPrice" runat="server" ImageUrl='<%#Eval("itemPrice") %>'/></span><br />
+                                                                         <label for="ItemDes" style="font-size: 15px;">Item Description:</label><span><asp:Image ID="itemDes" runat="server" ImageUrl='<%#Eval("itemDescription") %>'/></span>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>-->
                                         </div>                                      
                                       </div>
                                    </div>

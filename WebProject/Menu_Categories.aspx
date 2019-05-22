@@ -25,7 +25,7 @@
                                                                 <label for="file-input" class=" form-control-label">Category Name:</label>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <asp:TextBox ID="TextBoxCategoryName" runat="server" class=" form-control"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBoxCategoryName" runat="server" class=" form-control" AutoComplete="Disabled"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="CategoryName" runat="server" ErrorMessage="Alert! Category Name is required" ForeColor="Red" ControlToValidate="TextBoxCategoryName"></asp:RequiredFieldValidator>
                                                             </div>
                                                         </div>

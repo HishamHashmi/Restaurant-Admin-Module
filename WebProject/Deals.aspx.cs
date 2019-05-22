@@ -19,7 +19,7 @@ namespace Project_Stuff
             {
                 SqlCommand objCmd = new SqlCommand();
                 objCmd.Connection = con;
-                objCmd.CommandText = "SELECT * FROM promotionalDeals";
+                objCmd.CommandText = "SELECT * FROM promotionalDeals where restaurantID="+Session["restaurantID"];
                 objCmd.CommandType = CommandType.Text;
                 DataSet objDS = new DataSet();
                 SqlDataAdapter objDA = new SqlDataAdapter();
@@ -36,7 +36,7 @@ namespace Project_Stuff
         {
                 string imagePath = "~/images/" + DealImage.FileName;
                 DealImage.SaveAs(Server.MapPath(imagePath).ToString());
-                SqlCommand cmd = new SqlCommand("Insert into promotionalDeals(dealName,dealImage,dealDescription) values('" + TextBoxDealName.Text + "','" + imagePath + "','"+TextBoxDealDescription.Text+"')", con);
+                SqlCommand cmd = new SqlCommand("Insert into promotionalDeals(dealName,dealImage,dealDescription,restaurantID) values('" + TextBoxDealName.Text + "','" + imagePath + "','"+TextBoxDealDescription.Text+"','"+Session["restaurantID"]+"')", con);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -49,7 +49,7 @@ namespace Project_Stuff
 
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM promotionalDeals WHERE dealName = @dealName", con))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM promotionalDeals WHERE dealName = @dealName AND restaurantID="+Session["restaurantID"], con))
                 {
                     cmd.Parameters.AddWithValue("@dealName", dealName);
                     con.Open();
